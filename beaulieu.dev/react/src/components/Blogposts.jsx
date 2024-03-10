@@ -4,6 +4,18 @@ import BlogpostService from '../services/blogposts';
 
 const Blogposts = () => {
 
+    // declare state
+    // fetch all blogposts
+    const [blogposts, setBlogposts] = useState([])
+
+    useEffect(() => {
+        BlogpostService.getAllBlogposts()
+            .then(response => {
+                setBlogposts(response); 
+            })
+            .catch(error => console.error(error));
+    }, [])
+
     /**
      * SingleBlogpost
      * Displays a single blogpost with a title, subtitle, author, content, and date
@@ -26,14 +38,12 @@ const Blogposts = () => {
                 <h3 className={blogpostStyle.subtitle}>{blogpost.subtitle}</h3>
                 <p className={blogpostStyle.author}>By {blogpost.author}</p>
                 <div className={blogpostStyle.content}>{blogpost.content}</div>
-                <p className={blogpostStyle.date}>{blostpost.date}</p>
+                <p className={blogpostStyle.date}>{blogpost.date}</p>
             </div>
         )
     }
 
-    // fetch all blogposts
-    const blogposts = BlogpostService.getAllBlogposts()
-    // console.log('here')
+
 
     // map all blogposts out in a div
     return (

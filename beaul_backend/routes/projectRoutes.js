@@ -4,6 +4,7 @@ const router = express.Router();
 // Project routes
 router.get('/api/projects', (req, res) => {
     // Logic to list all projects
+    
 })
 router.post('/api/projects', (req, res) => {
     // Logic to create a new project

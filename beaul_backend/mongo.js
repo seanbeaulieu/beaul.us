@@ -4,7 +4,7 @@ console.log(process.argv[2])
 
 // define url below for db
 const url =
-    `mongodb+srv://seanlbeaulieu:${password}@beaul-dev.usxejsv.mongodb.net/?retryWrites=true&w=majority&appName=beaul-dev`
+    `mongodb+srv://seanlbeaulieu:${password}@beaul-dev.usxejsv.mongodb.net/blogposts?retryWrites=true&w=majority&appName=beaul-dev`
 
     // NO PASSWORD CASE
 if (process.argv.length < 3) {

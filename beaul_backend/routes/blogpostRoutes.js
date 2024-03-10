@@ -5,6 +5,7 @@ const router = express.Router();
 // Blog post routes
 router.get('/', (request, response) => {
     // Logic to list all blog posts
+    console.log('in blogpost router')
     Blogpost.find({}).then(blogposts => {
         response.json(blogposts)
       })
