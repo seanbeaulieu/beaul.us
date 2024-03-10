@@ -1,20 +1,32 @@
 const express = require('express');
+const Blogpost = require('../models/blogpost');
 const router = express.Router();
 
 // Blog post routes
-router.get('/', (req, res) => {
+router.get('/', (request, response) => {
     // Logic to list all blog posts
+    Blogpost.find({}).then(blogposts => {
+        response.json(blogposts)
+      })
 })
-router.post('/', (req, res) => {
+router.post('/', (request, response) => {
     // Logic to create a new blog post
 })
-router.get('/:postId', (req, res) => {
+router.get('/:postId', (request, response) => {
     // Logic to get a single blog post by ID
+    Blogpost.findById(request.params.id).then(blogpost => {
+        if (blogpost) {
+          response.json(blogpost)
+        } else {
+          response.status(404).end()
+        }
+      })
+        .catch(error => next(error))
 })
-router.put('/:postId', (req, res) => {
+router.put('/:postId', (request, response) => {
     // logic to update a blog post by ID
 })
-router.delete('/:postId', (req, res) => {
+router.delete('/:postId', (request, response) => {
     // Logic to delete a blog post by ID
 })
 

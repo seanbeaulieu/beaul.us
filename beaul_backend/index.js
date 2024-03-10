@@ -7,11 +7,12 @@ require('dotenv').config()
 // express declaration
 const express = require('express')
 const app = express()
-// app.use(express.static('dist'))
+app.use(express.static('dist'))
 app.use(express.json())
 
 // declare morgan here
-
+const morgan = require('morgan')
+app.use(morgan('tiny'))
 
 // cors
 const cors = require('cors')

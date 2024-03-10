@@ -2,6 +2,7 @@ import { useState } from 'react'
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
+import Blogposts from "./components/Blogposts"
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
@@ -37,7 +38,7 @@ function App() {
   return (
   <div>
     <About />
-    <Projects />
+    <Blogposts />
   </div>
   )
 
