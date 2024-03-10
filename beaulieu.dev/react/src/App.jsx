@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom'
 import About from "./components/About";
 import Blogposts from "./components/Blogposts"
 import Contact from "./components/Contact";
@@ -36,10 +37,12 @@ function App() {
   )
   */
   return (
-  <div>
-    <About />
-    <Blogposts />
-  </div>
+  <Router>
+    <div>
+      <About />
+      <Blogposts />
+    </div>
+  </Router>
   )
 
 }
