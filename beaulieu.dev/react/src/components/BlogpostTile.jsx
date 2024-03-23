@@ -42,7 +42,7 @@ const BlogpostTile = ({ blogpost }) => {
     }
 
     return (
-        <Link to={'${blogpost.id}'} style={styles.container}>
+        <Link to={`blogposts/${blogpost.id}`} style={styles.container}>
             <h2 style={styles.title}>{blogpost.title}</h2>
             <h3 style={styles.subtitle}>{blogpost.subtitle}</h3>
             <div style={styles.authorAndDate}>
