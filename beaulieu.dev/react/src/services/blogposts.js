@@ -7,6 +7,12 @@ const getAllBlogposts = () => {
     return request.then(response => response.data)
 }
 
+const getBlogpostById = id => {
+    // console.log(baseUrl)
+    const request = axios.get(`${baseUrl}/${id}`)
+    return request.then(response => response.data)
+}
+
 const addBlogpost = newObject => {
     const request = axios.post(baseUrl, newObject)
     return request.then(response => response.data)
@@ -17,4 +23,4 @@ const deleteBlogpost = id => {
     return request.then(response => response.data)
 }
 
-export default { getAllBlogposts, addBlogpost, deleteBlogpost }
+export default { getAllBlogposts, getBlogpostById, addBlogpost, deleteBlogpost }

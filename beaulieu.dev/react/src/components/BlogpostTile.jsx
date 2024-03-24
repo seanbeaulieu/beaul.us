@@ -16,10 +16,8 @@ const BlogpostTile = ({ blogpost }) => {
             color: 'inherit',
             marginBottom: '20px',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            // inline style does not work
-            '&:hover': {
-                backgroundColor: '#f8f8f8'
-            }
+            width: '100%',
+            maxWidth: '600px', 
         },
         title: {
             fontSize: '20px',
@@ -42,7 +40,7 @@ const BlogpostTile = ({ blogpost }) => {
     }
 
     return (
-        <Link to={`blogposts/${blogpost.id}`} style={styles.container}>
+        <Link to={`/blogposts/${blogpost.id}`} style={styles.container}>
             <h2 style={styles.title}>{blogpost.title}</h2>
             <h3 style={styles.subtitle}>{blogpost.subtitle}</h3>
             <div style={styles.authorAndDate}>
@@ -54,3 +52,4 @@ const BlogpostTile = ({ blogpost }) => {
 }
 
 export default BlogpostTile
+

@@ -4,11 +4,10 @@ import React from "react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import About from "./components/About"
 import Blogposts from "./components/Blogposts"
+import SingleBlogpost from './components/SingleBlogpost'
 import Contact from "./components/Contact"
 import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
-
-import './App.css'
 
 function App() {
 
@@ -23,13 +22,19 @@ function App() {
   // routing below
 
   return (
-  <Router>
-    <div>
-      <About />
-      <Blogposts />
-      
+    <Router>
+      <Navbar />
+      <div>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/blogposts" element={<Blogposts />} />
+        <Route path="blogposts/:id" element={<SingleBlogpost />} />
+        {/* ... other routes ... */}
+      </Routes>
+   
     </div>
   </Router>
+
   )
 
 }

@@ -1,28 +1,69 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import BlogpostService from '../services/blogposts'
 
 /**
      * SingleBlogpost
      * Displays a single blogpost with a title, subtitle, author, content, and date
      * project: json object containing the blogpost
      */
-const SingleBlogpost = ({ blogpost }) => {
-    const blogpostStyle = {
-        container: "p-4 border border-gray-200 rounded-lg shadow-md",
-        title: "text-xl font-bold",
-        subtitle: "text-md text-gray-600",
-        author: "text-sm text-gray-500",
-        content: "my-2",
-        date: "text-xs text-gray-400",
+const SingleBlogpost = () => {
+    const [blogpost, setBlogpost] = useState(null)
+    const { id } = useParams() 
+
+    useEffect(() => {
+        
+        BlogpostService.getBlogpostById(id)
+            .then(data => {
+                setBlogpost(data);
+            })
+            .catch(error => console.error(error));
+    }, [id])
+
+    if (!blogpost) {
+        return <div>Loading...</div>
     }
 
-    // basic formatting for a single blogpost
+    // Define the style, basic 
+    const blogpostStyle = {
+        container: {
+            whiteSpace: 'pre-wrap',
+            padding: '1rem',
+            border: '1px solid #E2E8F0',
+            borderRadius: '0.625rem',
+            boxShadow: '0 0.25rem 0.375rem rgba(0, 0, 0, 0.1)',
+            margin: 'auto',
+            textAlign: 'center',
+            maxWidth: '32rem'
+        },
+        title: {
+            fontSize: '1.25rem',
+            fontWeight: 'bold'
+        },
+        subtitle: {
+            fontSize: '1rem',
+            color: '#4A5568'
+        },
+        author: {
+            fontSize: '0.875rem',
+            color: '#718096'
+        },
+        content: {
+            marginY: '0.5rem'
+        },
+        date: {
+            fontSize: '0.75rem',
+            color: '#718096'
+        }
+    }
+
     return (
-        <div className={blogpostStyle.container}>
-            <h2 className={blogpostStyle.title}>{blogpost.title}</h2>
-            <h3 className={blogpostStyle.subtitle}>{blogpost.subtitle}</h3>
-            <p className={blogpostStyle.author}>By {blogpost.author}</p>
-            <div className={blogpostStyle.content}>{blogpost.content}</div>
-            <p className={blogpostStyle.date}>{blogpost.date}</p>
+        <div style={blogpostStyle.container}>
+            <h2 style={blogpostStyle.title}>{blogpost.title}</h2>
+            <h3 style={blogpostStyle.subtitle}>{blogpost.subtitle}</h3>
+            <p style={blogpostStyle.author}>By {blogpost.author}</p>
+            <div style={blogpostStyle.content}>{blogpost.content}</div>
+            <p style={blogpostStyle.date}>{blogpost.date}</p>
         </div>
     )
 }
