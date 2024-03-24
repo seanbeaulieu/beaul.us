@@ -7,7 +7,8 @@ const BlogpostTileContainer = ({ children }) => {
         alignItems: 'center',
         justifyContent: 'center',
         margin: 'auto',
-        maxWidth: '800px', // Adjust the width as needed
+        marginTop: '70px',
+        maxWidth: '800px',
         padding: '20px',
         boxSizing: 'border-box',
     }

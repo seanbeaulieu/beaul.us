@@ -29,9 +29,9 @@ const SingleBlogpost = () => {
         container: {
             whiteSpace: 'pre-wrap',
             padding: '1rem',
-            border: '1px solid #E2E8F0',
-            borderRadius: '0.625rem',
-            boxShadow: '0 0.25rem 0.375rem rgba(0, 0, 0, 0.1)',
+            
+            
+            
             margin: 'auto',
             textAlign: 'center',
             maxWidth: '32rem'

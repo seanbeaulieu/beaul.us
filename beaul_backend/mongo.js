@@ -3,8 +3,11 @@ const password = process.argv[2]
 console.log(process.argv[2])
 
 // define url below for db
-const url =
-    `mongodb+srv://seanlbeaulieu:${password}@beaul-dev.usxejsv.mongodb.net/blogposts?retryWrites=true&w=majority&appName=beaul-dev`
+// const url =
+//    `mongodb+srv://seanlbeaulieu:${password}@beaul-dev.usxejsv.mongodb.net/blogposts?retryWrites=true&w=majority&appName=beaul-dev`
+
+
+const url = process.env.MONGODB_URI
 
     // NO PASSWORD CASE
 if (process.argv.length < 3) {
