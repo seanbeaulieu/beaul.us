@@ -18,11 +18,11 @@ const About = () => {
         <div style={styles.container}>
             <h1>beaul.us</h1>
             <p>
-                Hello! I'm Sean, a passionate developer with an interest in building b2b saas. I have a rich background in various domains of technology.
+                Hello! I'm Sean, a passionate developer with an interest in building and working with software.
             </p>
 
             <p>
-                This website showcases some of my latest projects and my journey in the world of life. Feel free to browse around and get in touch if you'd like to connect!
+                This website showcases some of my latest posts and my related links. Feel free to browse around and get in touch if you'd like to connect!
             </p>
         </div>
     )
