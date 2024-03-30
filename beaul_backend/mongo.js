@@ -26,6 +26,7 @@ const blogPostSchema = new mongoose.Schema({
     author: String,
     content: String,
     date: String,
+    category: String
     // what other fields to add...
 
 
