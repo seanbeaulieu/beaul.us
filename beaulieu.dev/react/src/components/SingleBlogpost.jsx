@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import BlogpostService from '../services/blogposts'
+import ReactMarkdown from 'react-markdown'
 
 /**
      * SingleBlogpost
@@ -29,11 +30,8 @@ const SingleBlogpost = () => {
         container: {
             whiteSpace: 'pre-wrap',
             padding: '1rem',
-            
-            
-            
             margin: 'auto',
-            textAlign: 'center',
+            textAlign: 'left',
             maxWidth: '32rem'
         },
         title: {
